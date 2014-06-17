@@ -33,6 +33,9 @@ p
   line-height 1.68
   font-weight 300
 
+  @media (max-width: 40em)
+    font-size 1em
+
 ul
   font-size 1.1em
   line-height 1.5
@@ -69,6 +72,12 @@ h3
     background-color $base-color
     opacity .3
 
+  @media (max-width: 40em)
+    position relative
+    width 100%
+    height auto
+    padding-bottom 100%
+
 .night-mode__btn
   position absolute
   top 1.3em
@@ -90,12 +99,22 @@ h3
     &.moon
       background-image url('images/sun.svg')
 
+.social
+  display inline-block
+  position absolute
+  bottom .5em
+  left .5em
+  z-index 5
+
+  *
+    vendor('box-sizing', initial)
+
 .main
   position relative
   width 66.666666%
   height 100%
   float right
-  padding 1.5em 3.5em 3em
+  padding 3em 3.5em
   clearfix()
   vendor('transition', all .2s ease)
 
@@ -106,6 +125,14 @@ h3
     a:hover
       color #fff
 
+  @media (max-width: 40em)
+    position relative
+    width 100%
+    height auto
+    padding 1em
+    float none
+    height auto
+
 .container
   max-width 850px
   margin 0 auto
@@ -113,13 +140,21 @@ h3
 .header
   margin-bottom 2em
 
+  @media (max-width: 40em)
+    margin-bottom 0
+
 .site-name
   visuallyhidden()
 
 .site-title
   font-size 2.2em
   font-weight 200
+  margin 0
   margin-bottom 20px
+
+  @media (max-width: 40em)
+    font-size 1.4em
+    margin-bottom 15px
 
 .open-positions
   font-size 1em

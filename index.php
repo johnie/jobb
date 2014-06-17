@@ -9,7 +9,7 @@
   <meta name="author" content="Johnie Hjelm">
   <meta name="description" content="Jobba som personlig assistent åt Johnie Hjelm">
   <meta name="keywords" content="Personlig, Assistent, Jobb, Johnie, Hjelm">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
   <meta property="og:title" content="Johnie Hjelm &middot; Jag söker en personlig assistent." />
   <meta property="og:description" content="Jag är en passionerad Webbdesigner och söker en personlig assistent." />
   <meta property="og:image" content="profilepic@2x.jpg" />
@@ -37,6 +37,32 @@
         <input type="checkbox" ng-model="isNightMode">
         <span ng-class="{ true: 'moon'}[isNightMode]"></span>
       </label>
+      <div class="social">
+        <!--<script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+        <script type="text/javascript" src="http://cdn.getshar.es/lib/0.8.0.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="http://cdn.getshar.es/lib/0.8.0.min.css"/>
+
+        <script type="text/javascript">
+          new GetShare({
+            /*root: jQueryElement*/
+            network: "twitter",
+            button: {text: "Tweet"},
+            share: {
+              url: "http://jobb.johnie.se/",
+              message: "Jobba som personlig assistent åt @johniehjelm | http://jobb.johnie.se/"
+            }
+          });
+          new GetShare({
+            network: "facebook",
+            button: {text: "Dela"},
+            share: {
+              url: "http://jobb.johnie.se/",
+              message: "Jobba som personlig assistent åt Johnie!"
+            }
+          });
+        </script>
+      </div>
     </figure>
     <main class="main" role="main" ng-class="{ true: 'night-mode'}[isNightMode]">
       <div class="container">

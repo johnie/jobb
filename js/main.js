@@ -21,6 +21,14 @@ $(function() {
 jobb = angular.module("jobb", []);
 
 jobb.controller("JobbController", function($scope) {
-  var isNightMode;
-  return isNightMode = false;
+  var nightMode;
+  nightMode = false;
+  if (localStorage["isNightMode"] === "" || (localStorage["isNightMode"] == null)) {
+    $scope.isNightMode = nightMode;
+  } else {
+    $scope.isNightMode = JSON.parse(localStorage["isNightMode"]);
+  }
+  return $scope.$watch("isNightMode", (function() {
+    localStorage["isNightMode"] = JSON.stringify($scope.isNightMode);
+  }), true);
 });

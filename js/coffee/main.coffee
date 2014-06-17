@@ -16,4 +16,14 @@ $ ->
 jobb = angular.module("jobb", [])
 
 jobb.controller "JobbController", ( $scope ) ->
-  isNightMode = false
+  nightMode = false
+
+  if localStorage["isNightMode"] is "" or not localStorage["isNightMode"]?
+    $scope.isNightMode = nightMode
+  else
+    $scope.isNightMode = JSON.parse(localStorage["isNightMode"])
+
+  $scope.$watch "isNightMode", (->
+    localStorage["isNightMode"] = JSON.stringify($scope.isNightMode)
+    return
+  ), true
