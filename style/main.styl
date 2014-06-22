@@ -77,12 +77,13 @@ h3
     width 100%
     height auto
     padding-bottom 100%
+    z-index 5
 
 .night-mode__btn
   position absolute
-  top 1.3em
-  right 1.5em
-  z-index 5
+  top 1.2em
+  left -2.5em
+  z-index 100
   cursor pointer
 
   input[type="checkbox"]
@@ -93,11 +94,16 @@ h3
     display block
     width 2em
     height 2em
-    background transparent url('images/moon.svg') center center no-repeat
+    background transparent url('images/moon_dark.svg') center center no-repeat
     vendor('background-size', 100%)
 
     &.moon
       background-image url('images/sun.svg')
+
+  @media (max-width: 40em)
+    top -2.7em
+    right 1.2em
+    left auto
 
 .social
   display inline-block
@@ -115,8 +121,7 @@ h3
   height 100%
   float right
   padding 3em 3.5em
-  clearfix()
-  vendor('transition', all .2s ease)
+  vendor('transition', all .1s ease)
 
   &.night-mode
     background-color $base-color
@@ -125,6 +130,25 @@ h3
     a:hover
       color #fff
 
+  &:before
+    content ''
+    display block
+    width 0
+    height 0
+    border 3.5em solid transparent
+    border-top-color white
+    border-right-color white
+    position absolute
+    top 0
+    right 100%
+    z-index 5
+    vendor('transition', all .1s ease)
+
+  &.night-mode
+    &:before
+      border-top-color $base-color
+      border-right-color $base-color
+
   @media (max-width: 40em)
     position relative
     width 100%
@@ -132,6 +156,19 @@ h3
     padding 1em
     float none
     height auto
+
+    &:before
+      bottom 100%
+      right 0
+      top auto
+      border-top-color transparent
+      border-bottom-color white
+
+    &.night-mode
+      &:before
+        border-top-color transparent
+        border-bottom-color $base-color
+        border-right-color $base-color
 
 .container
   max-width 850px

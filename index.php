@@ -33,10 +33,6 @@
 <body ng-app="jobb" ng-controller="JobbController">
   <div class="site">
     <figure class="presentation" role="presentation">
-      <label class="night-mode__btn">
-        <input type="checkbox" ng-model="isNightMode">
-        <span ng-class="{ true: 'moon'}[isNightMode]"></span>
-      </label>
       <div class="social">
         <!--<script type="text/javascript"
         src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -65,6 +61,10 @@
       </div>
     </figure>
     <main class="main" role="main" ng-class="{ true: 'night-mode'}[isNightMode]">
+      <label class="night-mode__btn">
+        <input type="checkbox" ng-model="isNightMode">
+        <span ng-class="{ true: 'moon'}[isNightMode]"></span>
+      </label>
       <div class="container">
         <header class="header" role="header">
           <h1 class="site-name">Johnie Hjelm</h1>

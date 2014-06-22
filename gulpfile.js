@@ -6,6 +6,7 @@ var gulp        = require('gulp'),
     stylus      = require('gulp-stylus'),
     plumber     = require('gulp-plumber'),
     gutil       = require('gulp-util'),
+    replacer    = require('gulp-substituter'),
     livereload  = require('gulp-livereload');
 
 var paths = {
@@ -52,4 +53,14 @@ gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['coffee']);
 });
 
+gulp.task('replace', function() {
+  gulp.src('analytics.php')
+      .pipe(replacer({
+        analytics: 'UA-17365662-21'
+      }))
+      .pipe(gulp.dest('./'));
+});
+
 gulp.task('default', ['stylus', 'html', 'coffee', 'watch']);
+
+gulp.task('analytics', ['replace']);
