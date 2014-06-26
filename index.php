@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
   <meta property="og:title" content="Johnie Hjelm &middot; Jag söker en personlig assistent." />
   <meta property="og:description" content="Jag är en passionerad Webbdesigner och söker en personlig assistent." />
-  <meta property="og:image" content="profilepic@2x.jpg" />
+  <meta property="og:image" content="images/social.png" />
 
   <link rel="stylesheet" type="text/css" href="style.css">
 
